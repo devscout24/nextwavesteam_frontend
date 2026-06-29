@@ -14,16 +14,22 @@ export default function TestModal({}: {}) {
     const navigate = useNavigate()
     const [open, setOpen] = React.useState(false)
 
-    const handleClick = (type: "player" | "user") => {
+    const handleClick = (type: "player" | "user" | "auth") => {
        if (type === "player") {
         localStorage.setItem("testMode", "player")
         setOpen(false)
         navigate("/player/me")
-       }else{
+       }
+       if (type === "user") {
         localStorage.setItem("testMode", "user")
         setOpen(false)
         navigate("/user/me")
        } 
+       if (type === "auth") { 
+        setOpen(false)
+        navigate("/auth")
+       }
+
     }
 
   return (
@@ -43,6 +49,7 @@ export default function TestModal({}: {}) {
             <div className="flex mt-10 justify-end ">
               <Button onClick={() => handleClick("player")}>Player</Button>
               <Button onClick={() => handleClick("user")}>User</Button>
+              <Button onClick={() => handleClick("auth")}>Auth</Button>
             </div>
           </DialogDescription>
         </DialogHeader>

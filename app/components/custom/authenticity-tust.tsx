@@ -1,68 +1,78 @@
+import { FaAward } from "react-icons/fa"
+import { PiPackageThin } from "react-icons/pi"
+import { IoMdCheckmarkCircleOutline } from "react-icons/io"
+
 import Container from "../common/container"
-import { FaAward } from "react-icons/fa";
-import { PiPackageThin } from "react-icons/pi";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
+const trustPoints = [
+  {
+    icon: <FaAward className="text-[#5A38F5]" />,
+    title: "Official Coordination",
+    description: "Direct player signing sessions",
+  },
+  {
+    icon: <PiPackageThin className="text-[#5A38F5]" />,
+    title: "Secure Packaging",
+    description: "Museum-quality protection",
+  },
+  {
+    icon: <IoMdCheckmarkCircleOutline className="text-[#5A38F5]" />,
+    title: "Verified Delivery",
+    description: "Tamper-proof holographic seals",
+  },
+]
 
-
-
-export default function AuthenticityTrust({}: {}) {
+export default function AuthenticityTrust() {
   return (
-    <Container>
-      <div className="flex">
-        <div className="max-w-121">
-          <img
-            src="/images/authenticityimage.png"
-            alt="Authenticity and Trust"
-          />
-        </div>
-
-        {/* authenticity text */}
-        <div className="ml-13.25 ">
-          <h2 className="  text-[48px] font-bold text-[#1E1E24] max-w-100  ">
-            Authenticity You Can Trust.
-          </h2>
-          <p className="commonP mt-4 max-w-127   ">
-            Every Fangram collectible is officially signed and verified. We coordinate directly to ensure every signature is genuine, every product is premium, and every delivery is secure.
-          </p>
-
-          {/* trust points */}
-          <div className="mt-8 space-y-6  ">
-
-            <div className="flex items-center gap-4 ">
-                <div className="w-10 h-10 bg-[#5A38F5]/5 rounded-full grid place-items-center    ">
-                    <FaAward className="text-[#5A38F5] "/>
-                </div>
-                <div className="">
-                    <h4 className=" font-medium text-primary   ">Official Coordination</h4>
-                    <p className="commonP text-[14px]!   ">Direct player signing sessions</p>
-                </div>
-            </div>
-            <div className="flex items-center gap-4 ">
-                <div className="w-10 h-10 bg-[#5A38F5]/5 rounded-full grid place-items-center    ">
-                    <PiPackageThin className="text-[#5A38F5] "/>
-                </div>
-                <div className="">
-                    <h4 className=" font-medium text-primary   ">Secure Packaging</h4>
-                    <p className="commonP text-[14px]!   ">Museum-quality protection</p>
-                </div>
-            </div>
-            <div className="flex items-center gap-4 ">
-                <div className="w-10 h-10 bg-[#5A38F5]/5 rounded-full grid place-items-center    ">
-                    <IoMdCheckmarkCircleOutline className="text-[#5A38F5] "/>
-                </div>
-                <div className="">
-                    <h4 className=" font-medium text-primary   ">Verified Delivery</h4>
-                    <p className="commonP text-[14px]!   ">Tamper-proof holographic seals</p>
-                </div>
-            </div>
-
+    <section className="py-14 md:py-20 lg:py-24">
+      <Container>
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+          {/* Image */}
+          <div className="w-full max-w-md lg:max-w-[480px] xl:max-w-[520px]">
+            <img
+              src="/images/authenticityimage.png"
+              alt="Authenticity and Trust"
+              className="w-full object-contain"
+            />
           </div>
 
+          {/* Content */}
+          <div className="w-full lg:flex-1">
+            <h2 className="max-w-xl text-center mx-auto lg:mx-0 text-3xl font-bold text-[#1E1E24] sm:text-4xl lg:text-left lg:text-5xl">
+              Authenticity You Can Trust.
+            </h2>
 
+            <p className="commonP mx-auto mt-5 max-w-2xl text-center lg:mx-0 lg:text-left">
+              Every Fangram collectible is officially signed and verified. We
+              coordinate directly to ensure every signature is genuine, every
+              product is premium, and every delivery is secure.
+            </p>
 
+            <div className="mt-10 space-y-6 w-fit mx-auto lg:mx-0    ">
+              {trustPoints.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4"
+                >
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#5A38F5]/5">
+                    {item.icon}
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-primary">
+                      {item.title}
+                    </h4>
+
+                    <p className="commonP mt-1 text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </section>
   )
 }

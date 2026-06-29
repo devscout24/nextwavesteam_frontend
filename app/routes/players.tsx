@@ -3,7 +3,7 @@ import PlayerCard from "~/components/common/player-card"
 import PlayerFilters from "~/components/custom/player-filters"
 import type { TPlayerCard } from "~/types"
 
-export default function players() {
+export default function Players() {
   const allPlayers: TPlayerCard[] = [
     {
       image_url: "/images/player.png",
@@ -78,32 +78,35 @@ export default function players() {
   ]
 
   return (
-    <section className="pb-25">
-      {/* banner */}
+    <section className="pb-14 md:pb-20 lg:pb-25">
+      {/* Banner */}
       <div
-        className="py-17"
+        className="px-4 py-16 md:px-6 md:py-20 lg:py-24"
         style={{
-          background: "url('/images/authbg.png')",
+          backgroundImage: "url('/images/authbg.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h2 className="pt-17 text-center text-[48px] font-bold text-[#1E1E24]">
+        <h2 className="mx-auto max-w-4xl text-center text-3xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
           Meet your favorite players.
         </h2>
-        <p className="commonP text-center">
+
+        <p className="commonP mx-auto mt-4 max-w-2xl text-center">
           Connect directly with your favorite stars.
         </p>
       </div>
 
-      {/* player s */}
+      {/* Players */}
       <Container>
-        <PlayerFilters />
+        <div className="mt-8 ">
+          <PlayerFilters />
+        </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {allPlayers.map((player, index) => (
-            <PlayerCard key={index} {...player} />
+        <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
+          {allPlayers.map((player) => (
+            <PlayerCard key={player.id} {...player} />
           ))}
         </div>
       </Container>

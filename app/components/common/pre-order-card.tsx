@@ -1,42 +1,50 @@
-import type { TPreOrder } from "~/types";
-import { MdStars } from "react-icons/md";
-import { Button } from "../ui/button";
-import { Link, useNavigate } from "react-router";
+import type { TPreOrder } from "~/types"
+import { MdStars } from "react-icons/md"
+import { Button } from "../ui/button"
+import { useNavigate } from "react-router"
 
- 
-export default function PreOrderCard({id , product_name , description , image_url}: TPreOrder) {
-
+export default function PreOrderCard({
+  id,
+  product_name,
+  description,
+  image_url,
+}: TPreOrder) {
   const navigate = useNavigate()
 
   return (
-    <div className="relative shadow-md rounded-lg overflow-hidden     ">
+    <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+      {/* Badge */}
+      <div className="yellowbtn absolute right-3 top-3 flex w-fit items-center gap-1 py-1! text-[11px]! sm:text-xs!">
+        <MdStars className="text-sm" />
+        <span>PRE-ORDER</span>
+      </div>
 
-        <p className="yellowbtn w-fit absolute top-2 right-2 py-1! text-[12px]!  ">
-            <MdStars />
-            <span className="">PRE-ORDER</span>
+      {/* Image */}
+      <img
+        src={image_url}
+        alt={product_name}
+        className="h-52 w-full object-cover sm:h-60 md:h-64 lg:h-72"
+      />
+
+      {/* Content */}
+      <div className="flex flex-col p-4 sm:p-5">
+        <h2 className="font-inter text-lg font-medium text-[#1E1E24] sm:text-xl">
+          {product_name}
+        </h2>
+
+        <p className="commonP mt-2 line-clamp-2 flex-1 text-sm sm:text-base">
+          {description}
         </p>
-        
-        <img src={image_url} alt={product_name} className="w-full h-full   max-h-72.5  object-cover rounded-lg" />
 
-        <div className="px-5 pb-6 ">
-            <h2 className=" text-[#1E1E24] font-inter font-normal text-xl mt-4    ">
-                {product_name}
-            </h2>
-            <p className="commonP mt-2 line-clamp-2   ">
-                {description}
-            </p>
-
-           <Button 
-           onClick={() => {
-            navigate(`/products?showing_productID=${id}`) 
-           }}
-             className={` text-base font-inter font-medium text-white bg-[#5A38F5] w-full   text-center rounded-full  mt-8 py-5!     `}
-           >
-            View Item
-           </Button>
-
-        </div>
-
+        <Button
+          onClick={() =>
+            navigate(`/products?showing_productID=${id}`)
+          }
+          className="mt-6 w-full rounded-full bg-[#5A38F5] py-5 text-sm font-medium text-white sm:text-base"
+        >
+          View Item
+        </Button>
+      </div>
     </div>
   )
 }

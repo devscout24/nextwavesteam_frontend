@@ -18,35 +18,35 @@ export default function Home() {
       <AuthenticityTrust />
 
       {/* foot banner */}
-      <div className="py-25">
+      <div className="py-14 md:py-20 lg:py-25">
         <Container>
           <div
-            className="rounded-3xl py-20"
+            className="rounded-3xl px-6 py-14 sm:px-10 md:py-16 lg:px-16 lg:py-20"
             style={{
-              background: "url('/images/authbg.png')",
+              backgroundImage: "url('/images/authbg.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
           >
-            <h2 className="text-center text-[48px] font-bold text-[#1E1E24]">
+            <h2 className="mx-auto max-w-4xl text-center text-3xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
               Start Your Signed Collection Today.
             </h2>
-            <p className="commonP text-center">
+
+            <p className="commonP mx-auto mt-4 max-w-2xl text-center">
               Premium cricket memorabilia. Limited availability.
             </p>
 
-            <div className="flex justify-center mt-6   ">
+            <div className="mt-8 flex justify-center">
               <Link
                 to="/#"
                 style={{
-                  background:
-                    "linear-gradient(172deg,rgba(90, 56, 245, 1) 0%, rgba(154, 63, 241, 1) 100%, rgba(237, 221, 83, 1) 100%)",
+                  background: "linear-gradient(172deg,#5A38F5 0%,#9A3FF1 100%)",
                 }}
-                className="rounded-full px-5 py-3 font-inter text-base font-medium text-white flex items-center gap-2    "
+                className="flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 text-center font-inter text-sm font-medium text-white transition hover:opacity-90 sm:w-auto sm:text-base"
               >
                 Select Your Signed Item
-                <GoArrowRight className="size-6" />
+                <GoArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
               </Link>
             </div>
           </div>

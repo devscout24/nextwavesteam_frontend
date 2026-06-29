@@ -1,49 +1,59 @@
-import { Link, Links } from "react-router"
+import { Link } from "react-router"
 import { AnimatedTabs } from "~/components/common/aminated-tab"
 import AuthInput from "~/components/common/auth-input"
 import Logo from "~/components/common/logo"
 import { Button } from "~/components/ui/button"
 
-export default function Signup({}: {}) {
+export default function Signup() {
   return (
-    <div className="w-full max-w-122 rounded-2xl bg-white p-10">
-      {/* logo */}
-
+    <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-lg sm:p-8 lg:p-10">
+      {/* Logo */}
       <div className="flex justify-center">
-        <Logo height={100} width={100} />
+        <Logo
+          className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24"
+          height={100}
+          width={100}
+        />
       </div>
 
-      <div className="mt-4 text-center">
-        <h2 className="text-2xl font-bold text-gray-800">Create an Account</h2>
-        <p className="font-inter mt-2 text-base text-[#5F6275]">
+      {/* Heading */}
+      <div className="mt-5 text-center">
+        <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">
+          Create an Account
+        </h2>
+
+        <p className="mt-2 text-sm text-[#5F6275] sm:text-base">
           Join Fangram and own the moment
         </p>
       </div>
 
-      {/* role selection */}
-      <div className="mt-6">
-        <AnimatedTabs
-          tabs={[
-            { id: "fan", label: "Fan" },
-            { id: "athlete", label: "Player/Athlete" },
-          ]}
-          onTabChange={(tab) => {
-            console.log(tab)
-          }}
-        />
+      {/* Role */}
+      <div className="mt-6 overflow-x-auto">
+        <div className="min-w-max">
+          <AnimatedTabs
+            tabs={[
+              { id: "fan", label: "Fan" },
+              { id: "athlete", label: "Player / Athlete" },
+            ]}
+            onTabChange={(tab) => console.log(tab)}
+          />
+        </div>
       </div>
 
-      <div className="mt-10 space-y-4">
+      {/* Inputs */}
+      <div className="mt-8 space-y-5">
         <AuthInput
           label="Full name"
           placeholder="Your full name here"
           type="text"
         />
+
         <AuthInput
           label="Email address"
           placeholder="you@example.com"
           type="email"
         />
+
         <AuthInput
           label="Password"
           placeholder="Min. 8 characters"
@@ -51,38 +61,42 @@ export default function Signup({}: {}) {
         />
       </div>
 
-      {/* sign in btn */}
-      <Button className="font-inter mt-6 w-full rounded-full bg-[#5A38F5] py-5.5 text-base font-medium hover:bg-[#5A38F5]">
+      {/* Button */}
+      <Button className="mt-6 h-12 w-full rounded-full bg-[#5A38F5] text-base font-medium hover:bg-[#4D2EE8] sm:h-14">
         Create Account
       </Button>
 
-      <div className="mt-6.5 text-center">
-        <h3 className=" flex items-center gap-1 text-[#717182]  ">
-          By signing up you agree to our
+      {/* Footer */}
+      <div className="mt-6 space-y-3 text-center text-sm text-[#717182]">
+        <p className="flex flex-wrap items-center justify-center gap-1">
+          <span>By signing up you agree to our</span>
+
           <Link
-            to="/auth/signup"
-            className="font-inter ml-1 text-[14px] font-medium text-[#5A38F5]"
+            to="/terms"
+            className="font-medium text-[#5A38F5] hover:underline"
           >
             Terms
           </Link>
-          & 
+
+          <span>&</span>
+
           <Link
-            to="/auth/signup"
-            className="font-inter ml-1 text-[14px] font-medium text-[#5A38F5]"
+            to="/privacy-policy"
+            className="font-medium text-[#5A38F5] hover:underline"
           >
             Privacy Policy
           </Link>
-        </h3>
+        </p>
 
-        <h3 className="text-[#717182] mt-2   ">
+        <p>
           Already have an account?
           <Link
             to="/auth"
-            className="font-inter ml-1 text-[14px] font-medium text-[#5A38F5]"
+            className="ml-1 font-medium text-[#5A38F5] hover:underline"
           >
             Sign in
           </Link>
-        </h3>
+        </p>
       </div>
     </div>
   )

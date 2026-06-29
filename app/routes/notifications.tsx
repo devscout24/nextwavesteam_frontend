@@ -4,7 +4,7 @@ import {
   MessageSquare,
   Star,
   CheckCircle,
-} from "lucide-react";
+} from "lucide-react"
 
 const notifications = [
   {
@@ -53,23 +53,21 @@ const notifications = [
     iconColor: "text-green-500",
     unread: false,
   },
-];
+]
 
 export default function NotificationPage() {
   return (
-    <div className="min-h-screen bg-gray-100 p-8 py-25    ">
-      <div className="mx-auto max-w-6xl rounded-3xl bg-white p-6 shadow-xl">
-
+    <div className="min-h-screen bg-gray-100 px-4   md:px-6 lg:px-8 py-25">
+      <div className="mx-auto max-w-6xl rounded-3xl bg-white p-4 shadow-xl sm:p-6 lg:p-8">
         {/* Header */}
-        <div className="mb-6 flex items-center justify-between rounded-2xl bg-white p-5 shadow-sm">
-
+        <div className="mb-6 flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-violet-600 font-semibold text-white">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-violet-600 text-lg font-semibold text-white">
               A
             </div>
 
             <div>
-              <h2 className="font-semibold text-gray-900">
+              <h2 className="text-lg font-semibold text-gray-900">
                 Notifications
               </h2>
 
@@ -79,7 +77,7 @@ export default function NotificationPage() {
             </div>
           </div>
 
-          <button className="flex items-center gap-2 rounded-full bg-violet-600 px-5 py-3 text-sm font-medium text-white hover:bg-violet-700">
+          <button className="flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-violet-700 sm:w-auto">
             <Check size={16} />
             Mark all as read
           </button>
@@ -87,60 +85,61 @@ export default function NotificationPage() {
 
         {/* Notification List */}
         <div className="space-y-4">
-
           {notifications.map((item) => {
-            const Icon = item.icon;
+            const Icon = item.icon
 
             return (
               <div
                 key={item.id}
-                className={`relative flex items-center justify-between rounded-2xl border bg-white px-5 py-5 transition hover:shadow-md overflow-hidden ${
+                className={`relative overflow-hidden rounded-2xl border bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
                   item.active
                     ? "border-violet-200"
                     : "border-gray-200"
                 }`}
               >
                 {item.active && (
-                  <div className="absolute left-0 top-0 h-full w-1 rounded-l-2xl bg-violet-600" />
+                  <div className="absolute left-0 top-0 h-full w-1 bg-violet-600" />
                 )}
 
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                  {/* Left */}
+                  <div className="flex items-start gap-4">
+                    <div
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${item.iconBg}`}
+                    >
+                      <Icon
+                        size={18}
+                        className={item.iconColor}
+                      />
+                    </div>
 
-                  <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full ${item.iconBg}`}
-                  >
-                    <Icon
-                      size={18}
-                      className={item.iconColor}
-                    />
+                    <div>
+                      <h3 className="text-base font-semibold text-gray-900">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-1 text-sm leading-6 text-gray-500">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
 
-                  <div>
-                    <h3 className="font-semibold text-gray-900">
-                      {item.title}
-                    </h3>
+                  {/* Right */}
+                  <div className="flex items-center gap-2 self-end md:self-center">
+                    <span className="text-sm whitespace-nowrap text-gray-500">
+                      {item.time}
+                    </span>
 
-                    <p className="mt-1 text-sm text-gray-500">
-                      {item.description}
-                    </p>
+                    {item.unread && (
+                      <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-violet-600" />
+                    )}
                   </div>
-                </div>
-
-                <div className="ml-6 flex items-center gap-2 whitespace-nowrap">
-                  <span className="text-sm text-gray-500">
-                    {item.time}
-                  </span>
-
-                  {item.unread && (
-                    <span className="h-2.5 w-2.5 rounded-full bg-violet-600" />
-                  )}
                 </div>
               </div>
-            );
+            )
           })}
-
         </div>
       </div>
     </div>
-  );
+  )
 }

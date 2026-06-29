@@ -1,65 +1,71 @@
-import { Link, Links } from "react-router"
+import { Link } from "react-router"
 import AuthInput from "~/components/common/auth-input"
 import Logo from "~/components/common/logo"
 import { Button } from "~/components/ui/button"
 
-export default function Login({}: {}) {
+export default function Login() {
   return (
-    <div className="w-full max-w-122 rounded-2xl bg-white p-10">
-      {/* logo */}
-
+    <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-lg sm:p-8 lg:p-10  ">
+      {/* Logo */}
       <div className="flex justify-center">
-        <Logo height={100} width={100} />
+        <Logo
+          className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24"
+          height={100}
+          width={100}
+        />
       </div>
 
-      <div className="mt-4 text-center">
-        <h2 className="text-2xl font-bold text-gray-800">Welcome Back</h2>
-        <p className="font-inter mt-2 text-base text-[#5F6275]">
+      {/* Heading */}
+      <div className="mt-5 text-center">
+        <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">
+          Welcome Back
+        </h2>
+
+        <p className="mt-2 font-inter text-sm text-[#5F6275] sm:text-base">
           Sign in to your Fangram account
         </p>
       </div>
 
-      <div className="mt-10 space-y-4">
+      {/* Inputs */}
+      <div className="mt-8 space-y-5">
         <AuthInput
           label="Email address"
           placeholder="you@example.com"
           type="email"
         />
+
         <AuthInput
           label="Password"
           placeholder="Enter your password"
           type="password"
         />
       </div>
-      <div className="flex justify-end  ">
+
+      {/* Forgot Password */}
+      <div className="mt-3 flex justify-end">
         <Link
           to="/auth/reset-password"
-          className="font-inter text-[14px] font-medium text-[#5A38F5]"
+          className="text-sm font-medium text-[#5A38F5] transition hover:underline"
         >
           Forgot password?
         </Link>
       </div>
 
-
-      {/* sign in btn */}
-      <Button 
-        className="bg-[#5A38F5] hover:bg-[#5A38F5] w-full py-5.5 rounded-full mt-6 font-inter font-medium text-base        "
-      >
-        Sign in 
+      {/* Sign In */}
+      <Button className="mt-6 h-12 w-full rounded-full bg-[#5A38F5] text-base font-medium hover:bg-[#4D2EE8] sm:h-14">
+        Sign in
       </Button>
 
-      <div className=" mt-6.5 text-center      ">
-        <h3 className=" text-[#717182]  ">
-          Don't have an account? 
-          <Link
-            to="/auth/signup"
-            className="font-inter text-[14px] font-medium text-[#5A38F5] ml-1   "
-          >
-            Sign up free
-          </Link>
-        </h3>
-      </div>
-
+      {/* Signup */}
+      <p className="mt-6 text-center text-sm text-[#717182] sm:text-base">
+        Don't have an account?
+        <Link
+          to="/auth/signup"
+          className="ml-1 font-medium text-[#5A38F5] hover:underline"
+        >
+          Sign up free
+        </Link>
+      </p>
     </div>
   )
 }

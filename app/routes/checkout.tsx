@@ -1,13 +1,13 @@
+import { BsPatchCheckFill } from "react-icons/bs"
+import { ArrowRight, Lock } from "lucide-react"
+import { Link } from "react-router"
+
 import Container from "~/components/common/container"
 import ShippingInfo from "~/components/custom/shiping-info"
-import { BsPatchCheckFill } from "react-icons/bs"
-import { Link } from "react-router"
-import { ArrowRight, Link2, Lock } from "lucide-react"
-import { Button } from "~/components/ui/button"
 
-export default function Checkout({}: {}) {
+export default function Checkout() {
   return (
-    <div className="bg-[#FBFBFF] py-25">
+    <section className="bg-[#FBFBFF]  py-25">
       <Container>
         {/* Breadcrumb */}
         <p className="text-sm text-gray-400">
@@ -17,60 +17,80 @@ export default function Checkout({}: {}) {
         </p>
 
         {/* Heading */}
-        <h1 className="mt-2 text-4xl font-bold text-gray-900">Checkout</h1>
-        <p className="mt-1 text-gray-500">
+        <h1 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+          Checkout
+        </h1>
+
+        <p className="mt-2 text-sm text-gray-500 sm:text-base">
           Complete your pre-order for this exclusive collectible.
         </p>
 
-        <div className="mt-8 flex items-start gap-8">
-          <ShippingInfo />
+        <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-start">
+          {/* Shipping */}
+          <div className="flex-1">
+            <ShippingInfo />
+          </div>
 
-          {/* order summary */}
-          <div className="w-120 rounded-xl bg-white p-4 shadow-sm">
-            <h2 className="text-xl text-[#1E1E24]">Order Summary</h2>
+          {/* Order Summary */}
+          <div className="w-full rounded-2xl bg-white p-5 shadow-sm lg:w-105 lg:sticky lg:top-28">
+            <h2 className="text-xl font-semibold text-[#1E1E24]">
+              Order Summary
+            </h2>
 
-            <div className="mt-4 flex gap-2">
+            <div className="mt-5 flex flex-col gap-4 sm:flex-row">
               <img
                 src="/images/cartitem.png"
                 alt="cart item"
-                className="w-30"
+                className="h-32 w-full rounded-xl object-cover sm:h-28 sm:w-28"
               />
 
-              <div className="">
-                <p className=" ">Official Signed Jersey</p>
-                <p className="">$499</p>
-                <p className="text-[#5C3AF5]">Rohit Sharma</p>
-                <p className="flex items-center gap-1 text-[#F5C542]">
-                  <BsPatchCheckFill />
-                  <span className="">100% Authenticity Guaranteed</span>
+              <div className="flex-1">
+                <h3 className="font-semibold text-[#1E1E24]">
+                  Official Signed Jersey
+                </h3>
+
+                <p className="mt-1 text-lg font-semibold">$499</p>
+
+                <p className="mt-1 text-[#5C3AF5]">
+                  Rohit Sharma
                 </p>
 
-                <p className="mt-4 font-inter text-[12px] text-[#474651]">
+                <p className="mt-2 flex items-center gap-2 text-sm text-[#F5C542]">
+                  <BsPatchCheckFill />
+                  <span>100% Authenticity Guaranteed</span>
+                </p>
+
+                <p className="mt-4 text-xs leading-6 text-[#474651]">
                   "This jersey is personally signed by Rohit Sharma and comes
                   with a digital Certificate of Authenticity (COA) recorded on
                   the blockchain."
                 </p>
               </div>
             </div>
-            <div className="mt-7 flex items-center justify-between border-t border-primary/10 pt-7">
-              <p className="">Total : </p>
-              <p className="text-2xl font-bold text-[#1E1E24]">$499.00</p>
+
+            <div className="mt-7 flex items-center justify-between border-t border-primary/10 pt-6">
+              <span className="font-medium">Total</span>
+
+              <span className="text-2xl font-bold text-[#1E1E24]">
+                $499.00
+              </span>
             </div>
+
             <Link
               to="/order-confirmation"
-              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 py-3! font-medium text-white transition hover:bg-indigo-700"
+              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-5 py-3 text-center font-medium text-white transition hover:bg-indigo-700"
             >
               Complete Pre-Order
               <ArrowRight size={18} />
             </Link>
 
-            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-400">
-              <Lock size={12} />
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500">
+              <Lock size={14} />
               Secure encrypted checkout
             </div>
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   )
 }

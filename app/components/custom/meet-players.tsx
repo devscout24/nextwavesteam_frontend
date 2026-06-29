@@ -1,8 +1,7 @@
- 
 import type { TBubblePlayers } from "~/types"
-import Container from "../common/container" 
+import Container from "../common/container"
 
-export default function MeetPlayers({}: {}) {
+export default function MeetPlayers() {
   const players: TBubblePlayers[] = [
     { name: "Virat Kohli", image_url: "/images/Virat_Kohli.png" },
     { name: "Rohit Sharma", image_url: "/images/Rohit_Sharma.png" },
@@ -17,28 +16,35 @@ export default function MeetPlayers({}: {}) {
   ]
 
   return (
-    <div className="py-25">
-      <h2 className="text-center text-[48px] font-bold text-[#1E1E24]">
-        Meet the Players
-      </h2>
-      <p className="commonP text-center">
-        Connect with India's top cricketers through direct messages.
-      </p>
-
+    <section className="py-14 md:py-20 lg:py-25">
       <Container>
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {players.map((player, index) => (
-            <div key={index} className=" flex items-center flex-col     "  >
+        <h2 className="text-center text-3xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
+          Meet the Players
+        </h2>
+
+        <p className="commonP mx-auto mt-3 max-w-2xl text-center">
+          Connect with India's top cricketers through direct messages.
+        </p>
+
+        <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {players.map((player) => (
+            <div
+              key={player.name}
+              className="flex flex-col items-center text-center"
+            >
               <img
                 src={player.image_url}
                 alt={player.name}
-                className="h-59.5 w-59.5"
+                className="h-32 w-32 object-contain sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-56 lg:w-56 xl:h-60 xl:w-60"
               />
-              <p className="font-medium text-xl  text-[#1E1E24]   ">{player.name}</p>
+
+              <p className="mt-3 text-sm font-medium text-[#1E1E24] sm:text-base lg:text-xl">
+                {player.name}
+              </p>
             </div>
           ))}
         </div>
       </Container>
-    </div>
+    </section>
   )
 }

@@ -1,13 +1,11 @@
-import { Minus, Plus, Lock, ArrowRight } from "lucide-react";
-import Container from "~/components/common/container";
-import CartItem from "~/components/custom/cart-item";
-import CartSummary from "~/components/custom/cart-summary";
+import Container from "~/components/common/container"
+import CartItem from "~/components/custom/cart-item"
+import CartSummary from "~/components/custom/cart-summary"
 
 export default function CartPage() {
   return (
-    <div className=" bg-[#faf9ff] px-6 py-25">
-        <Container>
-
+    <section className="bg-[#faf9ff] px-4     py-25">
+      <Container>
         {/* Breadcrumb */}
         <p className="text-sm text-gray-400">
           Home <span className="mx-2">/</span>
@@ -15,36 +13,37 @@ export default function CartPage() {
         </p>
 
         {/* Heading */}
-        <h1 className="mt-2 text-4xl font-bold text-gray-900">
+        <h1 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
           Your Cart
         </h1>
-        <p className="mt-1 text-gray-500">
+
+        <p className="mt-2 text-sm text-gray-500 sm:text-base">
           Pre-orders ship within 30 days.
         </p>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[2fr_1fr]">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[2fr_1fr]">
           {/* Cart Items */}
-          <div className="rounded-3xl bg-white p-5 shadow-lg shadow-indigo-100/40 h-fit   ">
+          <div className="overflow-hidden rounded-3xl bg-white p-4 shadow-lg shadow-indigo-100/40 sm:p-6">
             {/* Table Header */}
-            <div className="grid grid-cols-4 rounded-full bg-gray-100 px-6 py-3 text-xs font-semibold uppercase text-gray-500">
+            <div className="hidden grid-cols-4 rounded-full bg-gray-100 px-6 py-3 text-xs font-semibold uppercase text-gray-500 md:grid">
               <span>Product</span>
               <span className="text-center">Quantity</span>
               <span className="text-center">Price</span>
               <span className="text-right">Subtotal</span>
             </div>
 
-            {/* Product Row */}
-            <CartItem
-              price={499}
-            />
-
+            {/* Items */}
+            <div className="mt-4 space-y-4">
+              <CartItem price={499} />
+            </div>
           </div>
 
-          {/* Order Summary */}
-          <CartSummary/>
-
+          {/* Summary */}
+          <div className="lg:sticky lg:top-28 h-fit">
+            <CartSummary />
+          </div>
         </div>
-        </Container> 
-    </div>
-  );
+      </Container>
+    </section>
+  )
 }

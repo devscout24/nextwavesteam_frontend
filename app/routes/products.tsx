@@ -80,7 +80,7 @@ export default function Products({}: {}) {
       <div className="bg-[#FBFBFF]">
         {/* Pre-Order Items */}
         <Container>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="pt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {preOrders.map((preOrder, index) => (
               <PreOrderCard key={index} {...preOrder} />
             ))}
@@ -89,7 +89,7 @@ export default function Products({}: {}) {
           <ProductDetails
             showing_product={
               preOrders.find(
-                (p) => p.id === parseInt(productId || "0")
+                (p) => p.id === parseInt(productId || String(preOrders[0].id))
               ) as TPreOrder
             }
           />

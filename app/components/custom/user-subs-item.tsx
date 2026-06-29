@@ -9,21 +9,40 @@ export default function UserSubsItem({
   status,
 }: TUserSubscription) {
   return (
-    <div className="flex items-center  rounded-2xl border border-primary/10 p-4 ">
-      <img src={image} alt="User Avatar" className="h-12 w-12 rounded-full" />
+    <div className="flex flex-col gap-4 rounded-2xl border border-primary/10 bg-white p-4 sm:flex-row sm:items-center sm:justify-between">
+      {/* Left */}
+      <div className="flex items-center gap-4 min-w-0">
+        <img
+          src={image}
+          alt={name}
+          className="h-12 w-12 flex-shrink-0 rounded-full object-cover"
+        />
 
-      <div className="ml-5">
-        <h3 className="">{name}</h3>
-        <p className="commonP text-[12px]">{date}</p>
+        <div className="min-w-0">
+          <h3 className="truncate font-semibold text-[#1E1E24]">
+            {name}
+          </h3>
+
+          <p className="commonP text-xs">
+            {date}
+          </p>
+        </div>
       </div>
 
-      <div className="ml-auto flex flex-col items-end   ">
-        <p className="commonP text-[12px]">{price}</p>
-        <p className="rounded-full bg-primary/20 px-3 py-1 text-primary">
-          {status}
-        </p>
-        <Button className="bg-transparent text-right text-[#717182] hover:bg-transparent">
-          <span className="">Cancel</span>
+      {/* Right */}
+      <div className="flex items-center justify-between border-t pt-4 sm:border-none sm:pt-0 sm:flex-col sm:items-end sm:justify-center">
+        <div className="flex flex-col items-start sm:items-end">
+          <p className="font-semibold text-primary">
+            {price}
+          </p>
+
+          <span className="mt-2 rounded-full bg-primary/15 px-3 py-1 text-xs font-medium text-primary">
+            {status}
+          </span>
+        </div>
+
+        <Button className="bg-transparent p-0 text-[#717182] hover:bg-transparent hover:text-red-500 sm:mt-2">
+          Cancel
         </Button>
       </div>
     </div>

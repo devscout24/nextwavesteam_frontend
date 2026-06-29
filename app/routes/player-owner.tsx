@@ -1,11 +1,12 @@
-import { CheckCircle, ChevronRight } from "lucide-react"
+import { CheckCircle } from "lucide-react"
 import React from "react"
+import { RiGroupLine } from "react-icons/ri"
+
 import { AnimatedTabs } from "~/components/common/aminated-tab"
 import PlayerProfileMessageItem from "~/components/custom/player-profile-message-item"
-import type { TPlayerProfileMessageItem } from "~/types"
-import { RiGroupLine } from "react-icons/ri"
 import PlayerEarning from "~/components/custom/player-earning"
 import PlayerEarningCard from "~/components/custom/player-earning-card"
+import type { TPlayerProfileMessageItem } from "~/types"
 
 const messages: TPlayerProfileMessageItem[] = [
   {
@@ -37,77 +38,93 @@ const messages: TPlayerProfileMessageItem[] = [
   },
 ]
 
-export default function PlayerOwner({}: {}) {
+export default function PlayerOwner() {
   const [activeTab, setActiveTab] = React.useState("messages")
 
   return (
-    <div className="flex items-center justify-center bg-[#FBFBFF] py-25">
-      <div className="w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-lg">
+    <section className="bg-[#FBFBFF] px-4 py-25">
+      <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-lg">
         {/* Header */}
-        <div className="flex items-center justify-between border-b px-8 py-6">
+        <div className="flex flex-col gap-5 border-b p-5 sm:flex-row sm:items-center sm:justify-between md:p-8">
           <div className="flex items-center gap-4">
             <img
               src="https://i.pravatar.cc/150?img=12"
               alt=""
-              className="h-14 w-14 rounded-full object-cover"
+              className="h-14 w-14 rounded-full object-cover sm:h-16 sm:w-16"
             />
 
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-lg font-bold">Virat Kohli</h2>
+                <h2 className="text-lg font-bold sm:text-xl">
+                  Virat Kohli
+                </h2>
 
-                <CheckCircle size={16} className="fill-indigo-600 text-white" />
+                <CheckCircle
+                  size={18}
+                  className="fill-indigo-600 text-white"
+                />
               </div>
 
-              <p className="text-xs font-medium text-indigo-600">
+              <p className="text-sm font-medium text-indigo-600">
                 Official Fangram Player
               </p>
 
-              <p className="text-xs text-gray-400">Member since March 2023</p>
+              <p className="text-xs text-gray-400">
+                Member since March 2023
+              </p>
             </div>
           </div>
 
-          <button className="rounded-full border border-yellow-400 px-5 py-2 text-xs font-semibold text-yellow-500">
+          <button className="self-start rounded-full border border-yellow-400 px-4 py-2 text-xs font-semibold text-yellow-500 sm:self-auto">
             Verified Player
           </button>
         </div>
 
         {/* Tabs */}
-        <div className="px-8 py-5 max-w-3/5  ">
-          <AnimatedTabs
-            tabs={[
-              { id: "messages", label: "Messages (3)" },
-              { id: "subscribers", label: "Subscribers (248)" },
-              { id: "earnings", label: "Earnings" },
-            ]}
-            onTabChange={(tabId) => setActiveTab(tabId)}
-          />
+        <div className="overflow-x-auto px-4 py-5 md:px-8">
+          <div className="min-w-max md:max-w-3/5">
+            <AnimatedTabs
+              tabs={[
+                { id: "messages", label: "Messages (3)" },
+                { id: "subscribers", label: "Subscribers (248)" },
+                { id: "earnings", label: "Earnings" },
+              ]}
+              onTabChange={(tabId) => setActiveTab(tabId)}
+            />
+          </div>
         </div>
 
-        {/* List */}
+        {/* Content */}
         {activeTab === "messages" ? (
-          <div className="space-y-4 px-8 pb-8">
+          <div className="space-y-4 px-4 pb-6 md:px-8 md:pb-8">
             {messages.map((item) => (
               <PlayerProfileMessageItem key={item.id} {...item} />
             ))}
           </div>
         ) : activeTab === "subscribers" ? (
-          <div className="mx-8 mb-8 grid place-items-center rounded-xl border border-primary/10 p-8">
+          <div className="mx-4 mb-6 grid place-items-center rounded-xl border border-primary/10 p-6 text-center md:mx-8 md:mb-8 md:p-8">
             <div className="grid h-16 w-16 place-items-center rounded-full bg-[#00A63E]/10 text-[#00A63E]">
-              <RiGroupLine className="size-6" />
+              <RiGroupLine className="size-7" />
             </div>
-            <p className="py-4 text-xl font-semibold text-primary">248</p>
-            <p className="commonP">Active subscribers across all fan tiers</p>
+
+            <p className="py-4 text-3xl font-semibold text-primary">
+              248
+            </p>
+
+            <p className="commonP">
+              Active subscribers across all fan tiers
+            </p>
           </div>
-        ) : activeTab === "earnings" ? (
-          <div className="mx-8 mb-8   ">
-            <PlayerEarningCard/>
-            <div className="border border-primary/10 rounded-xl mt-4    ">
+        ) : (
+          <div className="mx-4 mb-6 md:mx-8 md:mb-8">
+            <PlayerEarningCard />
+
+            <div className="mt-4 overflow-x-auto rounded-xl border border-primary/10">
               <PlayerEarning />
             </div>
           </div>
-        ) : null}
+        )}
       </div>
-    </div>
+    </section>
   )
 }
