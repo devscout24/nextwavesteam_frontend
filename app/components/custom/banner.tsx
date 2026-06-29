@@ -21,7 +21,7 @@ export default function Banner() {
         </Button>
 
         {/* Heading */}
-        <h2 className="mt-5 md:max-w-140 max-w-200 text-4xl leading-tight font-bold text-[#1E1E24] sm:text-5xl lg:text-6xl xl:text-[72px] xl:leading-[120%]">
+        <h2 className="mt-5 md:max-w-140 lg:max-w-200 text-4xl leading-tight font-bold text-[#1E1E24] sm:text-5xl lg:text-6xl xl:text-[72px] xl:leading-[120%]">
           Own the Signature. Own the Moment.
         </h2>
 
