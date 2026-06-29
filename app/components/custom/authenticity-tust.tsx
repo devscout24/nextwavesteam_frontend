@@ -26,13 +26,13 @@ export default function AuthenticityTrust() {
   return (
     <section className="py-14 md:py-20 lg:py-24">
       <Container>
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex flex-col items-start gap-12 lg:flex-row   lg:gap-16">
           {/* Image */}
-          <div className="w-full max-w-md lg:max-w-[480px] xl:max-w-[520px]">
+          <div className="w-full max-w-md lg:max-w-120 xl:max-w-130  ">
             <img
               src="/images/authenticityimage.png"
               alt="Authenticity and Trust"
-              className="w-full object-contain"
+              className="w-full    object-cover   "
             />
           </div>
 
@@ -42,7 +42,7 @@ export default function AuthenticityTrust() {
               Authenticity You Can Trust.
             </h2>
 
-            <p className="commonP mx-auto mt-5 max-w-2xl text-center lg:mx-0 lg:text-left">
+            <p className="commonP mx-auto mt-5 max-w-xl text-center lg:mx-0 lg:text-left">
               Every Fangram collectible is officially signed and verified. We
               coordinate directly to ensure every signature is genuine, every
               product is premium, and every delivery is secure.

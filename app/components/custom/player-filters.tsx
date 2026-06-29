@@ -23,42 +23,49 @@ export default function PlayerFilters() {
   return (
     <div className="  ">
       {/* Search + Sort */}
-      <div className="flex flex-col gap-4 rounded-2xl border border-gray-200 p-4 sm:flex-row sm:items-center sm:gap-5">
+      <div className="flex flex-col gap-4 rounded-full border border-gray-200 p-4 sm:flex-row sm:items-center sm:gap-5">
         {/* Search */}
         <div className="relative flex-1">
           <CiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-500" />
 
           <Input
             placeholder="Search players..."
-            className="h-12 rounded-full pl-11"
+            className="h-12 rounded-full pl-11 text-base!  "
           />
         </div>
 
         {/* Sort */}
         <Select>
-          <SelectTrigger className="h-12 w-full rounded-full sm:w-56">
+          <SelectTrigger className="  w-full rounded-full sm:w-56 py-6 px-5 text-base! ">
             <SelectValue placeholder="Sort by" />
           </SelectTrigger>
 
           <SelectContent>
             <SelectGroup>
-              <SelectItem value="most">Most Popular</SelectItem>
-              <SelectItem value="least">Least Popular</SelectItem>
-              <SelectItem value="default">Default</SelectItem>
+              <SelectItem value="most" className="text-base!">
+                Most Popular
+              </SelectItem>
+              <SelectItem value="least" className="text-base!">
+                Least Popular
+              </SelectItem>
+              <SelectItem value="default" className="text-base!">
+                Default
+              </SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
       </div>
 
       {/* Tabs */}
-      <div className="mt-6 w-full overflow-x-auto">
-        <div className="min-w-max">
+      <div className="mt-2 w-full overflow-x-auto">
+        <div className="min-w-max lg:w-2/5   ">
           <AnimatedTabs
             tabs={tabs}
             bg="bg-white"
             aminatebg="bg-[#F5C542]"
             activeTxt="text-primary"
             onTabChange={(id) => console.log(id)}
+
           />
         </div>
       </div>

@@ -57,15 +57,16 @@ export default function Products({}: {}) {
   return (
     <div>
       <div
-        className="py-35"
+        className="py-35 pt-45 "
         style={{
-          background: `url('/images/authbg.png')`,
+          background: `url('/images/bannershap.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <Container>
-          <p className="yellowbtn mx-auto w-fit">Pre-Order Now Open</p>
+          <p className="yellowbtn mx-auto w-fit   ">Pre-Order Now Open</p>
           <h2 className="mt-3 text-center text-5xl font-bold text-[#1E1E24]">
             Signed Memorabilia
           </h2>

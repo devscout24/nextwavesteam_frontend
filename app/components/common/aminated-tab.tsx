@@ -35,7 +35,7 @@ export function AnimatedTabs({ tabs , onTabChange , bg , aminatebg , activeTxt }
             />
           )}
 
-          <span className="relative z-10 text-nowrap ">{tab.label}</span>
+          <span className="relative z-10 text-nowrap text-base   ">{tab.label}</span>
         </button>
       ))}
     </div>

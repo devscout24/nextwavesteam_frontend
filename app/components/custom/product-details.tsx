@@ -46,7 +46,7 @@ export default function ProductDetails({
             <img
               src={showing_product.image_url}
               alt={showing_product.product_name}
-              className="h-full max-h-167 w-full max-w-125 rounded-lg border-8 border-white object-cover shadow-sm"
+              className="   h-167 w-full max-w-125 rounded-lg border-8 border-white object-cover shadow-sm"
             />
             <div className="yellowbtn absolute top-4 right-4 py-1!">
               <BsPatchCheckFill />
@@ -69,9 +69,9 @@ export default function ProductDetails({
 
             {/* Player selection and quantity */}
             <div className="mt-8 rounded-lg bg-[#F3F3F8] p-5 sm:p-8">
-              <p>SELECT PLAYER SIGNATURE</p>
+              <p className="pb-2 ">SELECT PLAYER SIGNATURE</p>
               <Select>
-                <SelectTrigger className="w-full rounded-full bg-white py-5">
+                <SelectTrigger className="w-full rounded-full bg-white py-5 px-4   ">
                   <SelectValue placeholder="Select Player" />
                 </SelectTrigger>
                 <SelectContent>
@@ -84,7 +84,7 @@ export default function ProductDetails({
                 </SelectContent>
               </Select>
 
-              <p className="mt-6">QUANTITY</p>
+              <p className="mt-6 pb-2">QUANTITY</p>
               <div className="flex flex-col sm:flex-row gap-2">
                 <div className="flex items-center rounded-full border border-primary/20 bg-white py-1 self-start sm:self-auto">
                   <Button

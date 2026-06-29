@@ -21,7 +21,7 @@ export default function Banner() {
         </Button>
 
         {/* Heading */}
-        <h2 className="mt-5 max-w-5xl text-4xl leading-tight font-bold text-[#1E1E24] sm:text-5xl lg:text-6xl xl:text-[72px] xl:leading-[120%]">
+        <h2 className="mt-5 md:max-w-140 max-w-200 text-4xl leading-tight font-bold text-[#1E1E24] sm:text-5xl lg:text-6xl xl:text-[72px] xl:leading-[120%]">
           Own the Signature. Own the Moment.
         </h2>
 
@@ -38,7 +38,7 @@ export default function Banner() {
               background:
                 "linear-gradient(172deg,#5A38F5 0%,#9A3FF1 100%)",
             }}
-            className="font-inter rounded-full px-6 py-6 text-base font-medium text-white"
+            className="font-inter rounded-full px-6 py-5.75 text-base font-medium text-white"
           >
             Select Your Signed Item
             <GoArrowRight className="ml-2 text-lg" />

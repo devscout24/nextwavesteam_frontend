@@ -1,7 +1,7 @@
 import { Menu } from "lucide-react"
 import type { TNavItem } from "~/types"
 import Logo from "./logo"
-import { Link } from "react-router"
+import { Link, useLocation } from "react-router"
 import { Button } from "../ui/button"
 import NavIconBtns from "./nav-icon-btns"
 import {
@@ -19,6 +19,12 @@ export default function Nav({ className }: { className?: string }) {
     { label: "Contact", href: "/contact" },
   ]
 
+  const location = useLocation();
+
+  console.log("Current location:", location.pathname);
+
+
+
   return (
     <nav className={`fixed top-0 z-50 w-full border-b bg-white ${className}`}>
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4">
@@ -32,7 +38,9 @@ export default function Nav({ className }: { className?: string }) {
             <li key={item.href}>
               <Link
                 to={item.href}
-                className="font-medium text-[#0E0F23CC] transition hover:text-[#5A38F5]"
+                className={`font-medium text-[#0E0F23CC] transition hover:text-[#5A38F5]
+                  ${location.pathname === item.href ? "text-[#5A38F5] underline " : ""}
+                  `}
               >
                 {item.label}
               </Link>
