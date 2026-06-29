@@ -9,24 +9,28 @@ export default function AvailablePreOrder({}: {}) {
       description:
         "Hand-signed by your choice of player from the current lineup.",
       image_url: "/images/Signed_Jersey.png",
+      id: 1
     },
     {
       product_name: "Signed Match Ball",
       description:
         "Premium red leather ball with authenticated silver signature.",
       image_url: "/images/Signed_Ball.png",
+      id: 2
     },
     {
       product_name: "Willow Grade Bat",
       description:
         "Full-size professional grade cricket bat signed on the blade.",
       image_url: "/images/Signed_Bat.png",
+      id: 3
     }, 
     {
       product_name: "Signed Photo Frame",
       description:
         "High-resolution action photo in a premium museum-grade frame.",
       image_url: "images/Framed_Autograph.png",
+      id: 4
     },
   ]
 

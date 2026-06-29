@@ -1,10 +1,13 @@
 import type { TPreOrder } from "~/types";
 import { MdStars } from "react-icons/md";
 import { Button } from "../ui/button";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
  
-export default function PreOrderCard({product_name , description , image_url}: TPreOrder) {
+export default function PreOrderCard({id , product_name , description , image_url}: TPreOrder) {
+
+  const navigate = useNavigate()
+
   return (
     <div className="relative shadow-md rounded-lg overflow-hidden     ">
 
@@ -23,12 +26,14 @@ export default function PreOrderCard({product_name , description , image_url}: T
                 {description}
             </p>
 
-           <Link
-           to="/pre-order"
-             className={` text-base font-inter font-medium text-white bg-[#5A38F5] w-full inline-block text-center rounded-full  mt-8 py-2!     `}
+           <Button 
+           onClick={() => {
+            navigate(`/products?showing_productID=${id}`) 
+           }}
+             className={` text-base font-inter font-medium text-white bg-[#5A38F5] w-full   text-center rounded-full  mt-8 py-5!     `}
            >
             View Item
-           </Link>
+           </Button>
 
         </div>
 

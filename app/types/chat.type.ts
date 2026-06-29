@@ -8,3 +8,11 @@ export type TChatHead = {
     is_active?: boolean ,
     onClick?: () => void ,
 }
+
+
+export type TUserChatCard = {
+  name: string
+  image: string
+  last_message: string
+  last_message_time: string
+}
