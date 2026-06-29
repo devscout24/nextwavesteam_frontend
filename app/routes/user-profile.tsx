@@ -10,7 +10,7 @@ export default function UserProfile() {
   const [activeTab, setActiveTab] = React.useState("orders")
 
   return (
-    <div className="bg-[#FBFBFF] px-4 py-10  py-25">
+    <div className="bg-[#FBFBFF] px-4  py-25">
       <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl bg-white pb-6 shadow-lg md:pb-8">
         {/* Header */}
         <div className="flex flex-col gap-5 border-b px-4 py-5 md:flex-row md:items-center md:justify-between md:px-8 md:py-6">

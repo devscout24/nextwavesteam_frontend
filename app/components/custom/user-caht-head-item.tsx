@@ -1,6 +1,7 @@
 import type { TUserChatCard } from "~/types"
 import { Button } from "../ui/button"
 import { SlArrowRight } from "react-icons/sl"
+import { useNavigate } from "react-router"
 
 export default function UserChatHeadItem({
   name,
@@ -8,14 +9,20 @@ export default function UserChatHeadItem({
   last_message,
   last_message_time,
 }: TUserChatCard) {
+
+  const navigate = useNavigate()
+
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border-l-4 border-[#5A38F5] bg-white p-4 shadow-md sm:flex-row sm:items-center sm:justify-between">
+    <div
+      className="flex flex-col gap-4 rounded-2xl border-l-4 border-[#5A38F5] bg-white p-4 shadow-md sm:flex-row sm:items-center sm:justify-between"
+      onClick={() => navigate("/message")}
+    >
       {/* Left */}
       <div className="flex items-center gap-4 min-w-0">
         <img
           src={image}
           alt={name}
-          className="h-12 w-12 flex-shrink-0 rounded-full object-cover"
+          className="h-12 w-12  shrink-0 rounded-full object-cover"
         />
 
         <div className="min-w-0 flex-1">

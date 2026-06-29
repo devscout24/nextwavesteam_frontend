@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react"
+import { useNavigate } from "react-router"
 import type { TPlayerProfileMessageItem } from "~/types"
 
 export default function PlayerProfileMessageItem({
@@ -9,8 +10,13 @@ export default function PlayerProfileMessageItem({
   amount,
   status,
 }: TPlayerProfileMessageItem) {
+
+  const navigate = useNavigate()
+
   return (
-    <div className="flex flex-col gap-5 rounded-2xl border bg-white p-4 transition hover:shadow-md sm:flex-row sm:items-center sm:justify-between sm:p-6">
+    <div
+     onClick={() => navigate("/message")}
+    className="flex flex-col gap-5 rounded-2xl border bg-white p-4 transition hover:shadow-md sm:flex-row sm:items-center sm:justify-between sm:p-6">
       {/* Left */}
       <div className="flex items-start gap-4">
         <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-indigo-100 font-semibold text-indigo-600">
