@@ -38,8 +38,8 @@ export default function Nav({ className }: { className?: string }) {
             <li key={item.href}>
               <Link
                 to={item.href}
-                className={`font-medium text-[#0E0F23CC] transition hover:text-[#5A38F5]
-                  ${location.pathname === item.href ? "text-[#5A38F5] underline " : ""}
+                className={`font-medium pb-0.5! border-b  text-[#0E0F23CC] transition hover:text-[#5A38F5]
+                  ${location.pathname === item.href ? "text-[#5A38F5] border-[#5A38F5] " : "border-transparent"}
                   `}
               >
                 {item.label}

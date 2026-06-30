@@ -60,7 +60,7 @@ export default function Chatingbox() {
               key={index}
               className="ml-auto w-fit max-w-[85%] md:max-w-[45%]"
             >
-              <div className="rounded-2xl rounded-br-md bg-[#5A38F5] px-4 py-2 text-sm text-white">
+              <div className="rounded-2xl rounded-br-none bg-[#5A38F5] px-4 py-2 text-sm text-white">
                 {message.message}
               </div>
 
@@ -80,7 +80,7 @@ export default function Chatingbox() {
               />
 
               <div>
-                <div className="rounded-2xl rounded-bl-md bg-[#F2F2F2] px-4 py-2 text-sm text-[#1A1A2E]">
+                <div className="rounded-2xl  rounded-bl-none bg-[#F2F2F2] px-4 py-2 text-sm text-[#1A1A2E]">
                   {message.message}
                 </div>
 

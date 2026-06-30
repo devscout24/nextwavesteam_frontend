@@ -30,7 +30,8 @@ export default function PlayerFilters() {
 
           <Input
             placeholder="Search players..."
-            className="h-12 rounded-full pl-11 text-base!  "
+            className="h-12 rounded-full pl-11 text-base! focus-visible:ring-[#5A38F5]/20 "
+
           />
         </div>
 

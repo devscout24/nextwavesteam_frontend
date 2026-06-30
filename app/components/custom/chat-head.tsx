@@ -51,7 +51,7 @@ export default function ChatHead({
 
       {/* Desktop Content */}
       <div className="ml-3 hidden flex-1 md:block">
-        <h3 className="font-bold text-[#1A1A2E]">{name}</h3>
+        <h3 className="font-semibold text-[#1A1A2E]">{name}</h3>
 
         <p
           className={`text-[12px] font-semibold ${

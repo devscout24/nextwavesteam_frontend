@@ -38,7 +38,7 @@ export default function MeetPlayers() {
                 className="h-32 w-32 object-contain sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-56 lg:w-56 xl:h-60 xl:w-60"
               />
 
-              <p className="mt-3 text-sm font-medium text-[#1E1E24] sm:text-base lg:text-xl">
+              <p className="  text-sm font-medium text-[#1E1E24] sm:text-base lg:text-xl">
                 {player.name}
               </p>
             </div>
