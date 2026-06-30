@@ -7,6 +7,7 @@ import PlayerProfileMessageItem from "~/components/custom/player-profile-message
 import PlayerEarning from "~/components/custom/player-earning"
 import PlayerEarningCard from "~/components/custom/player-earning-card"
 import type { TPlayerProfileMessageItem } from "~/types"
+import Container from "~/components/common/container"
 
 const messages: TPlayerProfileMessageItem[] = [
   {
@@ -43,7 +44,7 @@ export default function PlayerOwner() {
 
   return (
     <section className="bg-[#FBFBFF] px-4 py-25">
-      <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-lg">
+      <Container>
         {/* Header */}
         <div className="flex flex-col gap-5 border-b p-5 sm:flex-row sm:items-center sm:justify-between md:p-8">
           <div className="flex items-center gap-4">
@@ -55,23 +56,16 @@ export default function PlayerOwner() {
 
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-lg font-bold sm:text-xl">
-                  Virat Kohli
-                </h2>
+                <h2 className="text-lg font-bold sm:text-xl">Virat Kohli</h2>
 
-                <CheckCircle
-                  size={18}
-                  className="fill-indigo-600 text-white"
-                />
+                <CheckCircle size={18} className="fill-indigo-600 text-white" />
               </div>
 
               <p className="text-sm font-medium text-indigo-600">
                 Official Fangram Player
               </p>
 
-              <p className="text-xs text-gray-400">
-                Member since March 2023
-              </p>
+              <p className="text-xs text-gray-400">Member since March 2023</p>
             </div>
           </div>
 
@@ -107,13 +101,9 @@ export default function PlayerOwner() {
               <RiGroupLine className="size-7" />
             </div>
 
-            <p className="py-4 text-3xl font-semibold text-primary">
-              248
-            </p>
+            <p className="py-4 text-3xl font-semibold text-primary">248</p>
 
-            <p className="commonP">
-              Active subscribers across all fan tiers
-            </p>
+            <p className="commonP">Active subscribers across all fan tiers</p>
           </div>
         ) : (
           <div className="mx-4 mb-6 md:mx-8 md:mb-8">
@@ -124,7 +114,7 @@ export default function PlayerOwner() {
             </div>
           </div>
         )}
-      </div>
+      </Container>
     </section>
   )
 }

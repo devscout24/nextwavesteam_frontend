@@ -1,10 +1,5 @@
-import {
-  Check,
-  Package,
-  MessageSquare,
-  Star,
-  CheckCircle,
-} from "lucide-react"
+import { Check, Package, MessageSquare, Star, CheckCircle } from "lucide-react"
+import Container from "~/components/common/container"
 
 const notifications = [
   {
@@ -22,8 +17,7 @@ const notifications = [
   {
     id: 2,
     title: "New message from Virat Kohli",
-    description:
-      "Your personalised video message is now ready to view.",
+    description: "Your personalised video message is now ready to view.",
     time: "Yesterday",
     icon: MessageSquare,
     iconBg: "bg-blue-100",
@@ -45,8 +39,7 @@ const notifications = [
   {
     id: 4,
     title: "Order FG-20248812 delivered!",
-    description:
-      "Your Signed Cricket Bat has been delivered. Leave a review?",
+    description: "Your Signed Cricket Bat has been delivered. Leave a review?",
     time: "5 days ago",
     icon: CheckCircle,
     iconBg: "bg-green-100",
@@ -57,8 +50,8 @@ const notifications = [
 
 export default function NotificationPage() {
   return (
-    <div className="min-h-screen bg-gray-100 px-4   md:px-6 lg:px-8 py-25">
-      <div className="mx-auto max-w-6xl rounded-3xl bg-white p-4 shadow-xl sm:p-6 lg:p-8">
+    <div className="bg-gray-100 px-4 py-25 md:px-6 lg:px-8">
+      <Container>
         {/* Header */}
         <div className="mb-6 flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
@@ -71,9 +64,7 @@ export default function NotificationPage() {
                 Notifications
               </h2>
 
-              <p className="text-sm text-gray-500">
-                2 unread
-              </p>
+              <p className="text-sm text-gray-500">2 unread</p>
             </div>
           </div>
 
@@ -92,13 +83,11 @@ export default function NotificationPage() {
               <div
                 key={item.id}
                 className={`relative overflow-hidden rounded-2xl border bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
-                  item.active
-                    ? "border-violet-200"
-                    : "border-gray-200"
+                  item.active ? "border-violet-200" : "border-gray-200"
                 }`}
               >
                 {item.active && (
-                  <div className="absolute left-0 top-0 h-full w-1 bg-violet-600" />
+                  <div className="absolute top-0 left-0 h-full w-1 bg-violet-600" />
                 )}
 
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -107,10 +96,7 @@ export default function NotificationPage() {
                     <div
                       className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${item.iconBg}`}
                     >
-                      <Icon
-                        size={18}
-                        className={item.iconColor}
-                      />
+                      <Icon size={18} className={item.iconColor} />
                     </div>
 
                     <div>
@@ -139,7 +125,7 @@ export default function NotificationPage() {
             )
           })}
         </div>
-      </div>
+      </Container>
     </div>
   )
 }
