@@ -17,7 +17,7 @@ export default function Contact({}: Props) {
     <section className="pb-14 md:pb-20 lg:pb-25">
       {/* Banner */}
       <div
-        className="px-4 pt-45 pb-24"
+        className="px-4 pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-45 lg:pb-24"
         style={{
           backgroundImage: "url('/images/playerbanner.png')",
           backgroundSize: "cover",
@@ -26,7 +26,7 @@ export default function Contact({}: Props) {
         }}
       >
         <div className="relative">
-          <h2 className="mx-auto max-w-4xl text-center text-3xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
+          <h2 className="mx-auto max-w-4xl text-center text-2xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
             Get in Touch
           </h2>
 
@@ -38,9 +38,9 @@ export default function Contact({}: Props) {
 
       {/* message and contact */}
       <Container>
-        <div className="mt-16 flex gap-10">
+        <div className="mt-10 flex flex-col gap-6 md:mt-16 lg:flex-row lg:gap-10">
           {/* message form */}
-          <div className="flex-1 rounded-xl border border-primary/10 bg-white p-8">
+          <div className="w-full rounded-xl border border-primary/10 bg-white p-5 sm:p-8 lg:flex-1">
             <h2 className="text-xl font-bold">Send Us a Message</h2>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -85,7 +85,7 @@ export default function Contact({}: Props) {
             </div>
 
             {/* agree to terms */}
-            <FieldGroup className="my-5 w-56">
+            <FieldGroup className="my-5 w-full sm:w-56">
               <Field orientation="horizontal">
                 <Checkbox
                   id="terms-checkbox-basic"
@@ -98,7 +98,7 @@ export default function Contact({}: Props) {
             </FieldGroup>
 
             <Button
-              className="rounded-full px-6 py-5"
+              className="w-full rounded-full px-6 py-5 sm:w-auto"
               style={{
                 background: "linear-gradient(172deg,#5A38F5 0%,#9A3FF1 100%)",
               }}
@@ -108,13 +108,13 @@ export default function Contact({}: Props) {
           </div>
 
           {/* contact details */}
-          <div className="max-w-md rounded-3xl border border-gray-200 bg-white p-8">
+          <div className="w-full rounded-3xl border border-gray-200 bg-white p-5 sm:p-8 lg:max-w-md">
             <h2 className="mb-8 text-xl font-bold">Contact Details</h2>
 
             {/* Email */}
             <div className="pb-3">
               <p className="text-sm text-gray-500">Email</p>
-              <p className="mt-1 text-lg font-medium">hello@fangram.com</p>
+              <p className="mt-1 text-lg font-medium break-all">hello@fangram.com</p>
             </div>
 
             <hr className="border-gray-200" />
@@ -168,8 +168,8 @@ export default function Contact({}: Props) {
         </div>
 
         {/* faq section */}
-        <div className="mt-25">
-          <h2 className="text-center text-3xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
+        <div className="mt-16 md:mt-20 lg:mt-25">
+          <h2 className="text-center text-2xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
             Frequently Asked Questions
           </h2>
 
@@ -226,7 +226,7 @@ export default function Contact({}: Props) {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <h2 className="mx-auto max-w-4xl text-center text-3xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
+                <h2 className="mx-auto max-w-4xl text-center text-2xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
                   Need urgent assistance?
                 </h2>
 
@@ -235,12 +235,12 @@ export default function Contact({}: Props) {
                 </p>
 
                 <div className="mt-8 flex justify-center">
-                  <Button 
+                  <Button
                     style={{
                       background:
                         "linear-gradient(172deg,#5A38F5 0%,#9A3FF1 100%)",
                     }}
-                    className="  w-full items-center justify-center gap-2 rounded-full px-6 py-5.5 text-center font-inter text-sm font-medium text-white transition hover:opacity-90 sm:w-auto sm:text-base"
+                    className="w-full items-center justify-center gap-2 rounded-full px-6 py-5.5 text-center font-inter text-sm font-medium text-white transition hover:opacity-90 sm:w-auto sm:text-base"
                   >
                     Contact Support
                   </Button>
