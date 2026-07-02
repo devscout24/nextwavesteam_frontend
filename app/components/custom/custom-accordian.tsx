@@ -5,17 +5,19 @@ type CustomAccordionProps = {
   title: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
+  className?: string;
 };
 
 export default function CustomAccordion({
   title,
   children,
   defaultOpen = false,
+  className = "",
 }: CustomAccordionProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="rounded-2xl border border-[#C8C5D3] bg-[#F8F7FB] overflow-hidden">
+    <div className={`rounded-2xl border border-[#C8C5D3] bg-[#F8F7FB] overflow-hidden ${className}`}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}

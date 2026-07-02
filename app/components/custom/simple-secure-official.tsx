@@ -20,19 +20,23 @@ const steps = [
   },
 ]
 
-export default function SimpleSecureOfficial() {
+export default function SimpleSecureOfficial(
+  {title , subtitle}
+  :
+  {title?: string , subtitle?: string}
+) {
   return (
-    <section className="py-14 md:py-20 lg:py-25">
+    <section className=" ">
       <Container>
         <h2 className="text-center text-3xl font-bold text-[#1E1E24] sm:text-4xl lg:text-5xl">
-          Simple. Secure. Official.
+          {title || ""}
         </h2>
 
         <p className="commonP mx-auto mt-3 max-w-2xl text-center">
-          How pre-orders work in three easy steps.
+          {subtitle || ""}
         </p>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-6 xl:gap-10">
+        <div className="mt-12 flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-6 xl:gap-10">
           {steps.map((step, index) => (
             <div
               key={index}

@@ -11,6 +11,8 @@ export default [
     route( "/message" , "./routes/message.tsx"),
     route( "/carts" , "./routes/cart.tsx"),
     route( "/checkout" , "./routes/checkout.tsx"),
+    route( "/about" , "./routes/about.tsx"),
+    route( "/contact" , "./routes/contact.tsx"),
     route( "/order-confirmation" , "./routes/order-confirmation.tsx"),
 
     route( "/notifications" , "./routes/notifications.tsx"),

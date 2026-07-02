@@ -14,7 +14,10 @@ export default function Home() {
       <Banner />
       <MeetPlayers />
       <AvailablePreOrder />
-      <SimpleSecureOfficial />
+      <SimpleSecureOfficial 
+      title="Simple. Secure. Official."
+      subtitle="How pre-orders work in three easy steps."
+      />
       <AuthenticityTrust />
 
       {/* foot banner */}
